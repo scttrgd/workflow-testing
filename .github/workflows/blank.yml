@@ -24,4 +24,4 @@ jobs:
 
       - name: Run a one-line script
         run: |
-          echo "repository variable : $target_host"
+          echo "repository variable : $env.target_host"
