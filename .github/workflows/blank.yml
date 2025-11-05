@@ -8,10 +8,12 @@ on:
     branches: [ "main" ]
 
   workflow_dispatch:
+env:
+  # Setting an environment variable with the value of a configuration variable
+  target_host: ${{ vars.TARGET_HOST }}
 
 jobs:
   conditional_job:
-    name: ${{ vars.TARGET_HOST }}
   
     # The type of runner that the job will run on
     # if: ${{ vars.TARGET_HOST == 'postgrest-testb.agilebase.co.uk' }}
@@ -21,7 +23,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Run a one-line script
-        run: ${{ vars.TARGET_HOST }}
+        run: echo ${{ target_host }}
 
       - name: Run a multi-line script
         run: |
