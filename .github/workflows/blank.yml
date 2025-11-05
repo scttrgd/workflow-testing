@@ -23,8 +23,8 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Run a one-line script
-        run: echo $vars.TARGET_HOST
-
+        run: |
+          echo "repository variable : $vars.TARGET_HOST
       - name: Run a multi-line script
         run: |
           echo Add other actions to build,
