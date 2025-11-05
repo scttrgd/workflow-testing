@@ -23,7 +23,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Run a one-line script
-        run: echo ${{ target_host }}
+        run: echo $target_host
 
       - name: Run a multi-line script
         run: |
