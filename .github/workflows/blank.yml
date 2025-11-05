@@ -16,8 +16,8 @@ jobs:
   conditional_job:
   
     # The type of runner that the job will run on
-    if: ${{ vars.TARGET_HOST == 'postgrest-testb.agilebase.co.uk' }}
-    # if: ${{ env.target_host == 'postgrest-testb.agilebase.co.uk' }}
+    # if: ${{ vars.TARGET_HOST == 'postgrest-testb.agilebase.co.uk' }}
+    if: ${{ contains( vars.TARGET_HOST, 'postgresqltest' ) }}
     runs-on: ubuntu-latest
 
     steps:
